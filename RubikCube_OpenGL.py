@@ -62,7 +62,7 @@ edges_axis = (
 	(3,2)
 			)
 
-cube_size = 7
+cube_size = 6
 matrix_cubes_len = (cube_size*cube_size*cube_size)-((cube_size-2)*(cube_size-2)*(cube_size-2))
 boxes = 			np.zeros((matrix_cubes_len), dtype='object')	#5 = 97 4 = 55 #3 = 26
 
@@ -310,13 +310,12 @@ def runCube():
 		glRotatef(0, 0, 0, 0)
 		glEnable(GL_DEPTH_TEST)
 		
-		clock=pygame.time.Clock()
+		clock = pygame.time.Clock()
 
 
 		#CREATE BOXES CLASSES ==================================================================================
 		blen = 0
 		
-
 		for x in range(cube_size):
 			for y in range(cube_size):
 				for z in range(cube_size):
@@ -387,10 +386,10 @@ def runCube():
 					if event.key == pygame.K_p: 
 						if boolReor:
 							boolReor = False
-							speed_rot_sel = 3
+							speed_rot_sel = 5
 						else:
 							boolReor = True
-							speed_rot_sel = 15
+							speed_rot_sel = 30
 
 					#AXIS SELECTION ========================================================================
 					if event.key == pygame.K_x: selectedAxis = 0; boxes = change_selected(boxes, selectedAxis, selectedLift); 	isAnySelected+=1; boolSelection = False
